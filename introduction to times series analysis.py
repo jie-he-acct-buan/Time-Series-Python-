@@ -83,7 +83,7 @@ result = sm.OLS(y,x).fit()
 # Print out the results and look at the relationship between R-squared and the correlation above
 print(result.summary())
 ###############################################################################
-MSFT=pd.read_csv('F:/0 - PhD at UTD/2019 Spring/DataCamp/Introduction to Time Series/MSFT.csv')
+MSFT=pd.read_csv('csv')
 MSFT=MSFT.set_index(['Date'])
 MSFT.index=pd.to_datetime(MSFT.index)
 # Convert the daily data to weekly data
@@ -112,7 +112,7 @@ annual_data['diff_rates'] = annual_data.diff()
 autocorrelation_annual = annual_data['diff_rates'].autocorr()
 print("The autocorrelation of annual interest rate changes is %4.2f" %(autocorrelation_annual))
 ###################################################################################
-HRB=pd.read_csv('F:/0 - PhD at UTD/2019 Spring/DataCamp/Introduction to Time Series/HRB.csv')
+HRB=pd.read_csv('HRB.csv')
 HRB=HRB.set_index(['Quarter'])
 HRB.index=pd.to_datetime(HRB.index)
 
@@ -128,7 +128,7 @@ print(acf_array)
 plot_acf(HRB,alpha=1)
 plt.show()
 ###############################################################################
-MSFT=pd.read_csv('F:/0 - PhD at UTD/2019 Spring/DataCamp/Introduction to Time Series/MSFT.csv')
+MSFT=pd.read_csv('MSFT.csv')
 MSFT=MSFT.set_index(['Date'])
 MSFT.index=pd.to_datetime(MSFT.index)
 # Convert the daily data to weekly data
