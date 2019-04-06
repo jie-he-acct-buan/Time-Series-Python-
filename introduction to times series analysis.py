@@ -53,8 +53,8 @@ print("Correlation of stocks and interest rates: ", correlation)
 plt.scatter(returns['SP500'],returns['US10Y'])
 plt.show()
 ##############################################################################
-UFO=pd.read_csv('F:/0 - PhD at UTD/2019 Spring/DataCamp/Introduction to Time Series/UFO.csv')
-DJI=pd.read_csv('F:/0 - PhD at UTD/2019 Spring/DataCamp/Introduction to Time Series/DJI.csv')
+UFO=pd.read_csv('UFO.csv')
+DJI=pd.read_csv('DJI.csv')
 UFO=UFO.set_index('Date')
 DJI=DJI.set_index('Date')
 levels=UFO.join(DJI, lsuffix='_left', rsuffix='_right', how='inner')
@@ -213,7 +213,7 @@ plt.title("Simulated Random Walk with Drift")
 plt.show()
 
 ###############################################################################
-AMZN=pd.read_csv('F:/0 - PhD at UTD/2019 Spring/DataCamp/Introduction to Time Series/AMZN.csv')
+AMZN=pd.read_csv('AMZN.csv')
 AMZN=AMZN.set_index(['Date'])
 AMZN.index=pd.to_datetime(AMZN.index)
 # Import the adfuller module from statsmodels
@@ -242,7 +242,7 @@ print('results for AD Fuller tests: \n', results)
 print('The p-value of the test on returns is: ' + str(results[1]))
 
 ################################################################################
-HRB=pd.read_csv('F:/0 - PhD at UTD/2019 Spring/DataCamp/Introduction to Time Series/HRB.csv')
+HRB=pd.read_csv('HRB.csv')
 HRB=HRB.set_index(['Quarter'])
 HRB.index=pd.to_datetime(HRB.index)
 # Import the acf module and the plot_acf module from statsmodels
@@ -347,7 +347,7 @@ plt.plot(simulated_data_2)
 
 plt.show()
 ###############################################################################
-intraday=pd.read_csv('F:/0 - PhD at UTD/2019 Spring/DataCamp/Introduction to Time Series/Sprint_Intraday.txt',header=None)
+intraday=pd.read_csv('Sprint_Intraday.txt',header=None)
 intraday=intraday.iloc[:,[0,1]]
 
 # import datetime module
@@ -407,10 +407,10 @@ simulated_data = AR_object.generate_sample(nsample=5000)
 plot_acf(simulated_data, lags=30)
 plt.show()
 #################################################################################
-HO=pd.read_csv('F:/0 - PhD at UTD/2019 Spring/DataCamp/Introduction to Time Series/CME_HO1.csv')
+HO=pd.read_csv('CME_HO1.csv')
 HO=HO.set_index(['Date'])
 
-NG=pd.read_csv('F:/0 - PhD at UTD/2019 Spring/DataCamp/Introduction to Time Series/CME_NG1.csv')
+NG=pd.read_csv('CME_NG1.csv')
 NG=NG.set_index(['Date'])
 
 # Plot the prices separately
@@ -426,7 +426,7 @@ plt.legend(loc='best', fontsize='small')
 plt.axhline(y=0, linestyle='--', color='k')
 plt.show()
 ###################################################################################
-temp_NY=pd.read_csv('F:/0 - PhD at UTD/2019 Spring/DataCamp/Introduction to Time Series/NOAA_TAVG.csv')
+temp_NY=pd.read_csv('NOAA_TAVG.csv')
 temp_NY=temp_NY.set_index(['DATE'])
 
 # Import the adfuller function from the statsmodels module
